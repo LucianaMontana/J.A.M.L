@@ -82,3 +82,9 @@
   animation: glowing 20s linear infinite;
 }
 
+@keyframes glowing{
+0%{
+  background-position: 0 0;
+}
+}
+
