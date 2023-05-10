@@ -61,24 +61,18 @@
   cursor: pointer;
   border: none;
   padding: 16px 32px;
-  color: #FFF;
-  font-size: 24px;
-  font-weight: bold;
+  color: #000000;
   position: relative;
   border-radius: 12px;
 }
 .boton2{
+  text-align: center;
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 10%;
+  height: 10%;
   background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
   background-size: 800%;
   border-radius: 10px;
-  filter: blur(8px);
   animation: glowing 20s linear infinite;
 }
 
