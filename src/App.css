@@ -46,3 +46,11 @@
   border-radius: 8px;
   }
 
+.Boton{
+  color: #fff;
+  border-radius: 40px;
+  margin-right: -105px;
+  box-shadow:  0 0 0 0 rgb(145, 64, 248, 0.5), 0 0 0 0 rgb(39, 200, 255, 0.5);
+  transition: transform 0.3s aese, box-shadow 0.3s aese;
+}
+
