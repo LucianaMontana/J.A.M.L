@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AltaUsuario from './altausuario';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Login from './login';
 
 
 function App() {
@@ -10,10 +11,11 @@ function App() {
     <Router>
       <Routes>
         <Route path= '/altausuario' element={<AltaUsuario/>}/>
+        <Route path='/login' element={<Login />}/>
       </Routes>
     </Router>
+
   );
 }
-
 export default App;
 
