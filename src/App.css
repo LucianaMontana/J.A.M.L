@@ -84,7 +84,7 @@
 }
 
 .loginForm{
-  margin: 0;
+  margin: 500px;
   padding: 0;
   box-sizing: border-box;
   width: 400px;
@@ -94,14 +94,14 @@
   margin-top: 40px;
   border-radius: 4px;
   font-family: 'Times New Roman', Times, serif;
-  color: beige;
-  font-size: 20px;
-  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  margin-bottom: 10px;
 
 }
 
 .palta{
-  margin: 0;
+  margin: 10px;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
@@ -115,9 +115,7 @@
   background: #fff;
 }
 .form1{
-  width: 100%;
-  height: 50px;
-  max-width: 400px;
+    
   position: relative;
   overflow: hidden;
 }
@@ -158,30 +156,34 @@
   color: #fff;
 }
 .form1 input:focus + .gmail1 .gmail2, .form1 input:valid + .gmail1 .gmail2{
-  transform: translate(-150%);
+  transform: translateY(-150%);
   font-size: 14px;
   color: #4b6f79;
 }
-S
+.form1 input:focus + .gmail1::after{
+  transform: translateX(0%);
+}
 
 .boton1{
   background-color: black;
   cursor: pointer;
-  border: none;
+  border: 2PX solid #000000;
   padding: 16px 32px;
   color: #000000;
   position: relative;
   border-radius: 12px;
+  transition: all 1s ease;
+  box-shadow: .5rem .5rem;
 }
 .boton2{
   text-align: center;
   content: "";
-  width: 10%;
-  height: 10%;
+  width: 30%;
+  height: 30%;
   background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
   background-size: 800%;
-  border-radius: 10px;
-  animation: glowing 20s linear infinite;
+  border-radius: 12px;
+  animation: glowing 45s linear infinite;
 }
 
 @keyframes glowing{
