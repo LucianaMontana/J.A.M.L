@@ -59,5 +59,6 @@
 .boton{
   background-color: black;
   cursor: pointer;
+  border: none;
 }
 
