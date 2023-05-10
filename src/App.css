@@ -78,5 +78,6 @@
   background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
   background-size: 800%;
   border-radius: 10px;
+  filter: blur(8px);
 }
 
