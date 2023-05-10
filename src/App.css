@@ -44,11 +44,15 @@
 }
 
 .loginForm{
-  background-color: rgb(0, 0, 0);
-  box-shadow: inset;
+  background-color: rgb(25, 134, 125);
+  box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
-  
+  margin: 45px;
+  padding: auto;
+}
 
+.palta{
+  padding: 10px;
 }
 
