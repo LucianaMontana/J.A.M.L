@@ -9,7 +9,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
+<<<<<<< HEAD
     "react-scripts": "5.0.1",
+=======
+    "react-scripts": "^5.0.1",
+    "tailwind": "^4.0.0",
+>>>>>>> d76d4291e1ab41437b5d9d72135e1804426a7baf
     "tailwindcss": "^3.3.2",
     "web-vitals": "^2.1.4"
   },

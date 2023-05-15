@@ -1,3 +1,6 @@
+*{
+  background-color: beige;
+}
 .App {
   text-align: center;
 
@@ -38,6 +41,7 @@
   }
 }
 
+<<<<<<< HEAD
 
 .alta{
   background-color: #1a0321;
@@ -197,3 +201,5 @@
   background-position: 0 0;
 }
 }
+=======
+>>>>>>> d76d4291e1ab41437b5d9d72135e1804426a7baf
