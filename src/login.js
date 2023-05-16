@@ -4,7 +4,7 @@ import './App.css';
 
 function login() {
     return (
-    <form className="loginForm w-full max-w-sm">
+    <form className="loginForm form1 w-full max-w-sm">
         <div className=" loginForm md:flex md:items-center mb-6">
           <div className="md:w-1/3">
           </div>
