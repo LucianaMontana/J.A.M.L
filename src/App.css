@@ -1,3 +1,10 @@
+*{
+  background-color: #fff0be;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
 .App {
   text-align: center;
 
@@ -88,7 +95,7 @@
   padding: 0;
   box-sizing: border-box;
   width: 400px;
-  background: #340742;
+  background: #f6f7c3;
   text-align: center;
   margin: auto;
   margin-top: 40px;
@@ -180,7 +187,7 @@
   content: "";
   width: 30%;
   height: 30%;
-  background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+  background: linear-gradient(45deg, rgb(149, 56, 255), rgb(243, 154, 176), rgb(188, 132, 240), rgb(155, 63, 230), rgb(55, 0, 255), rgb(113, 113, 241), rgb(245, 163, 206), rgb(217, 151, 255));
   background-size: 800%;
   border-radius: 12px;
   animation: glowing 45s linear infinite;
