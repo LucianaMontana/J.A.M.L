@@ -4,10 +4,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .App {
   text-align: center;
 
@@ -107,7 +107,7 @@
   color: rgb(255, 255, 255);
   font-size: 15px;
   margin-bottom: 10px;
-
+  position: absolute;
 }
 
 .palta{
@@ -207,4 +207,5 @@
   background-position: 0 0;
 }
 }
+
 
