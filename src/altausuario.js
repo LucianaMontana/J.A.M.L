@@ -1,4 +1,6 @@
+import { render, screen } from '@testing-library/react';
 import logo from './logo.svg';
+import App from './App';
 import './App.css';
 
 function AltaUsuario() {

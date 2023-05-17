@@ -47,7 +47,6 @@
   }
 }
 
-
 .alta{
   background-color: #1a0321;
   text-align: center;
@@ -109,6 +108,8 @@
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
+  background: #340742;
+  font-family: 'Times New Roman', Times, serif;
 }
  
 .palta{
@@ -127,7 +128,9 @@
 }
 .form1{
   margin: 0;
-  padding: 0;
+  padding: 0;    
+  position: relative;
+  overflow: hidden;
 }
 .form1 input{
   width: 100%;
@@ -207,5 +210,3 @@
   background-position: 0 0;
 }
 }
-
-
