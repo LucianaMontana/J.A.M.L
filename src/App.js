@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import AltaUsuario from './AltaUsuario';
+import AltaUsuario from './altausuario';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './login';
 
