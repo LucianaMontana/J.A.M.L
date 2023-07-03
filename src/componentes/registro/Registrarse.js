@@ -103,7 +103,7 @@ export default function Registrarse() {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="Quiero recibir actualizaciones."
+                  label="Quiero recibir actualizaciones por correo electronico."
                 />
               </Grid>
             </Grid>
