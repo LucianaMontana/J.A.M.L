@@ -13,8 +13,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// Firebase
-import 'firebase/auth';
 
 function Copyright(props) {
   return (
@@ -32,14 +30,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function InicioSesion() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  const [ isRegistrando, setIsRegistrando ] = React.useState(false);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -57,9 +49,9 @@ export default function InicioSesion() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Iniciar Sesion
+            {isRegistrando ? "Registrate" : "Iniciar Sesion"}
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form"  noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -90,17 +82,16 @@ export default function InicioSesion() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Iniciar Sesion
+              {""} 
+              {isRegistrando ? "Registrate" : "Iniciar Sesion"}
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  ¿Desea Cambiar Contraseña?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href='/registro' variant="body2">
-                  {"¿No tenes cuenta? Registrarse"}
+                <Link onClick={() => setIsRegistrando(!isRegistrando)} variant="body2">
+                  {isRegistrando
+                    ? "¿Ya tienes cuenta? Inicia Sesion"
+                    : "¿No tenes cuenta? Registrate"
+                  }
                 </Link>
               </Grid>
             </Grid>
