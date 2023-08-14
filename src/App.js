@@ -1,6 +1,5 @@
 import React from 'react';
-import InicioSesion from './componentes/login/InicioSesion';
-import Registrarse from './componentes/registro/Registrarse';
+import Logueo from './componentes/logueo/Logueo';
 import Home from './componentes/home/Home';
 
 import { app } from './componentes/firebase';
@@ -12,7 +11,7 @@ function App() {
 
   return (
     <>
-      {usuario ? <Home/> : <InicioSesion/>}
+      {usuario ? <Home/> : <Logueo/>}
     </>
   );
 }

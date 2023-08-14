@@ -29,7 +29,7 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function InicioSesion() {
+export default function Logueo() {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
 
