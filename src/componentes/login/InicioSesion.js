@@ -87,7 +87,7 @@ export default function InicioSesion() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link onClick={() => setIsRegistrando(!isRegistrando)} variant="body2">
+                <Link onClick={() => setIsRegistrando(!isRegistrando)} variant="body2" style={{cursor: 'pointer'}}>
                   {isRegistrando
                     ? "¿Ya tienes cuenta? Inicia Sesion"
                     : "¿No tenes cuenta? Registrate"
