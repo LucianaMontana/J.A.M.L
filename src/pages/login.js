@@ -43,6 +43,7 @@ export default function SignIn() {
           alignItems: 'center',
         }}
       >
+        <imagen></imagen>
         <Typography component='h1' variant='h5' color='primary'>
           𝕴𝖓𝖎𝖈𝖎𝖆𝖗 𝕾𝖊𝖘𝖎ó𝖓
         </Typography>
