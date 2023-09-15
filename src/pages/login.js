@@ -30,7 +30,7 @@ export default function SignIn() {
       <Grid
         item
         container
-        xs={4}
+        xs={3.50}
         className='login-box'
         sx={{
           boxShadow: 3,
@@ -43,9 +43,8 @@ export default function SignIn() {
           alignItems: 'center',
         }}
       >
-        <imagen></imagen>
         <Typography component='h1' variant='h5' color='primary'>
-          𝕴𝖓𝖎𝖈𝖎𝖆𝖗 𝕾𝖊𝖘𝖎ó𝖓
+        𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
         </Typography>
         <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
@@ -54,7 +53,7 @@ export default function SignIn() {
             required
             fullWidth
             id='email'
-            label='Gmail:'
+            label='𝒢𝓂𝒶𝒾𝓁:'
             name='email'
             autoComplete='email'
             autoFocus
@@ -65,14 +64,14 @@ export default function SignIn() {
             required
             fullWidth
             name='password'
-            label='Contraseña:'
+            label='𝒞𝑜𝓃𝓉𝓇𝒶𝓈𝑒ñ𝒶:'
             type='password'
             id='password'
             autoComplete='current-password'
           />
-          <FormControlLabel
+          <FormControlLabel style={{alignSelf:'center', marginLeft:'60px'}}
             control={<Checkbox value='remember' color='primary' />}
-            label='𝕽𝖊𝖈𝖔𝖗𝖉𝖆𝖗 𝖒𝖎𝖘 𝖉𝖆𝖙𝖔𝖘'
+            label='𝑅𝑒𝒸𝑜𝓇𝒹𝒶𝓇 𝓂𝒾𝓈 𝒹𝒶𝓉𝑜𝓈'
           />
           <Button
             type='submit'
@@ -80,17 +79,17 @@ export default function SignIn() {
             variant='contained'
             sx={{ mt: 3, mb: 2 }}
           >
-            𝕴𝖓𝖎𝖈𝖎𝖆𝖗 𝕾𝖊𝖘𝖎ó𝖓
+            𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
           </Button>
-          <Grid container>
-            <Grid item xs>
+          <Grid container spacing={2}>
+            <Grid item xs={8} style={{marginLeft:'-90px'}}>
               <Link href='/OlvidoContraseña' variant='body2'>
-                has olvidado tu contraseña?
+              𝐻𝒶𝓈 𝑜𝓁𝓋𝒾𝒹𝒶𝒹𝑜 𝓉𝓊 𝒸𝑜𝓃𝓉𝓇𝒶𝓈𝑒ñ𝒶?
               </Link>
             </Grid>
-            <Grid item>
-              <Link href='/Registro' variant='body2'>
-                {'No tenes cuenta? Registrate!'}
+            <Grid item xs={9} style={{marginBottom:'-60px', marginLeft:'-235px'}}>
+              <Link href='/registro' variant='body2'>
+                {'𝒩𝑜 𝓉𝑒𝓃𝑒𝓈 𝒸𝓊𝑒𝓃𝓉𝒶? 𝑅𝑒𝑔𝒾𝓈𝓉𝓇𝒶𝓉𝑒!'}
               </Link>
             </Grid>
           </Grid>

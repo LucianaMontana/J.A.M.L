@@ -5,6 +5,8 @@ import Prueba from './pages/prueba';
 /*  import { app } from './componentes/firebase';*/
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './pages/login';
+import AltaUsuario from './pages/altausuario';
+import Registrate from './pages/altausuario';
 
 
 function App() {
@@ -13,8 +15,8 @@ function App() {
   return(
           <Router>
         <Routes>
-          <Route path='/prueba' element={<Prueba />} />
           <Route path='/' element={<SignIn />} />
+          <Route path='/registro' element={<Registrate />} />
         </Routes>
       </Router>
     
