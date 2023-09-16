@@ -53,6 +53,25 @@ export default function Registrate() {
               autoComplete='nombre'
               autoFocus
             />
+            <TextField
+              margin='normal'
+              required
+              fullWidth
+              id='email'
+              label='Gmail:'
+              name='email'
+              autoComplete='email'
+            />
+            <TextField
+              margin='normal'
+              required
+              fullWidth
+              name='password'
+              label='Contraseña:'
+              type='password'
+              id='password'
+              autoComplete='current-password'
+            />
             
           </Box>
         </Grid>
