@@ -115,6 +115,14 @@ export default function Registrate() {
               </svg>
             </Button>
   
+            <Button
+              type='submit'
+              fullWidth
+              variant='contained'
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Registrarse
+            </Button>
             
           </Box>
         </Grid>
