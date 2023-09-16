@@ -30,5 +30,6 @@ function ForgotPasswordForm() {
            xs={4}
            className='login-box'
            sx={{
+            boxShadow: 3,
 
 
