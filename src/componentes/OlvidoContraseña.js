@@ -47,4 +47,14 @@ function ForgotPasswordForm() {
             </p>
 
             <TextField
+             margin='normal'
+             required
+             fullWidth
+             id='email'
+             label='Correo Electrónico'
+             name='email'
+             autoComplete='email'
+             autoFocus
+             value={email}
+             onChange={handleEmailChange}
 
