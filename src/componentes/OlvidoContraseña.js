@@ -24,6 +24,8 @@ function ForgotPasswordForm() {
         alignItems='center'
         >
 
-     <Grid
+        <Grid
+           item
+           container
 
 
