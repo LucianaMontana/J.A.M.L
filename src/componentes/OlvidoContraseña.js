@@ -40,4 +40,5 @@ function ForgotPasswordForm() {
           alignItems: 'center',
         }}
         >
+            <h2>¿Has olvidado tu contraseña?</h2>
 
