@@ -41,5 +41,8 @@ function ForgotPasswordForm() {
         }}
         >
             <h2>¿Has olvidado tu contraseña?</h2>
-            <p></p>
+            <p>
+            Ingresa tu correo electrónico para recibir instrucciones de
+          recuperación:
+            </p>
 
