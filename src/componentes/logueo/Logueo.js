@@ -10,7 +10,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+// Credencial de Firebase
+import {app} from "../firebase";
 
 function Copyright(props) {
   return (
@@ -27,9 +28,42 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function Logueo() {
+export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  // Creacion de Usuario Registro
+  const crearUsuario = (email,password) => {
+    app.auth().createUserWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Usuario Creado:", usuarioFirebase);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
+
+  //Inicio de Sesion 
+  const iniciarSesion = (email,password) => {
+    app.auth().signInWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Sesion Iniciada con:", usuarioFirebase.user);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
+
+  //Boton Submit
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    //Verificar creacion de usuario
+    if (isRegistrando) {
+      crearUsuario(email,password);
+    }
+
+    //Verificar usuario ya registrado ya puede iniciar sesion
+    if (!isRegistrando) {
+      iniciarSesion(email,password);
+    }
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -49,7 +83,7 @@ export default function Logueo() {
           <Typography component="h1" variant="h5">
             {isRegistrando ? "Registrate" : "Iniciar Sesion"}
           </Typography>
-          <Box component="form"  noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={submitHandler}  noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -59,6 +93,8 @@ export default function Logueo() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -69,6 +105,8 @@ export default function Logueo() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button
               type="submit"
