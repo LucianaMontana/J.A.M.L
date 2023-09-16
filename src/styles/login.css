@@ -13,29 +13,14 @@
   }
   
   .login-box {
-    box-shadow: 3;
-    border-radius: 2;
+    box-shadow: 4;
+    border-radius: 3;
     padding: 6 4;
     margin-top: 8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
-    background-color: hsl(0, 0%, 13%); /* Color de fondo con opacidad */
+    background-color: hsl(0, 0%, 13%); 
   }
   .checkbox {
     background-color: rgb(129, 129, 129);
   }
   
-  /*.grid-item {
-    background: gold;
-  }
-  .grid-item1 {
-    background: blue;
-  }
-  .grid-item2 {
-    background: green;
-  }
-  .grid-item3 {
-    background: red;
-  }*/
