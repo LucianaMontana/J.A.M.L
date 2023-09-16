@@ -22,5 +22,6 @@ function ForgotPasswordForm() {
         component='main'
         justifyContent='center'
         alignItems='center'
+        >
 
 
