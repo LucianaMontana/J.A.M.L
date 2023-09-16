@@ -21,5 +21,6 @@ function ForgotPasswordForm() {
         className='background-image'
         component='main'
         justifyContent='center'
+        alignItems='center'
 
 
