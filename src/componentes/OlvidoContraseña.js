@@ -28,5 +28,6 @@ function ForgotPasswordForm() {
            item
            container
            xs={4}
+           className='login-box'
 
 
