@@ -3,3 +3,5 @@ import Button from '@mui/material/Button';
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
+
+function ForgotPasswordForm() {
