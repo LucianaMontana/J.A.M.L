@@ -30,6 +30,8 @@ const defaultTheme = createTheme();
 export default function Logueo() {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
+  const [email, setEmail] = React.userState('');
+  const [password, setPassword] = React.userState('');
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -49,7 +51,7 @@ export default function Logueo() {
           <Typography component="h1" variant="h5">
             {isRegistrando ? "Registrate" : "Iniciar Sesion"}
           </Typography>
-          <Box component="form"  noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={submitHandler}  noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -59,6 +61,8 @@ export default function Logueo() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -69,6 +73,8 @@ export default function Logueo() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button
               type="submit"
