@@ -10,7 +10,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+// Credencial de Firebase
+import {app} from "../firebase";
 
 function Copyright(props) {
   return (
@@ -32,6 +33,14 @@ export default function Logueo() {
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
   const [email, setEmail] = React.userState('');
   const [password, setPassword] = React.userState('');
+
+  // Creacion de Usuario Registro
+  const crearUsuario = (email,password) => {
+    app.auth().createUserWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Usuario Creado:", usuarioFirebase);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
 
   //Boton Submit
   const submitHandler = (e) => {
