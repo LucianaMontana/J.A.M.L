@@ -123,7 +123,13 @@ export default function Registrate() {
             >
               Registrarse
             </Button>
-            
+            <Grid container>
+              <Grid item xs>
+                <Link href='/OlvidoContraseña' variant='body2'>
+                  has olvidado tu contraseña?
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
