@@ -8,3 +8,4 @@ function ForgotPasswordForm() {
     const [email, setEmail] = useState('');
 
     const handleEmailChange = (event) => {
+        setEmail(event.target.value);
