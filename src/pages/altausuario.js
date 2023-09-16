@@ -43,6 +43,16 @@ export default function Registrate() {
             Registrate
           </Typography>
           <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+              margin='normal'
+              required
+              fullWidth
+              id='nombre'
+              label='Nombre y Apellido:'
+              name='nombre'
+              autoComplete='nombre'
+              autoFocus
+            />
             
           </Box>
         </Grid>
