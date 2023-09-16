@@ -41,4 +41,5 @@ function ForgotPasswordForm() {
         }}
         >
             <h2>¿Has olvidado tu contraseña?</h2>
+            <p></p>
 
