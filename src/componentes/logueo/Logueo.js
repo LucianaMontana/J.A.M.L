@@ -31,8 +31,8 @@ const defaultTheme = createTheme();
 export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
-  const [email, setEmail] = React.userState('');
-  const [password, setPassword] = React.userState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   // Creacion de Usuario Registro
   const crearUsuario = (email,password) => {
@@ -52,7 +52,7 @@ export default function Logueo(props) {
 
   //Boton Submit
   const submitHandler = (e) => {
-    e-preventDefaul();
+    e.preventDefault();
 
     //Verificar creacion de usuario
     if (isRegistrando) {
