@@ -28,7 +28,7 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function Logueo() {
+export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
   const [email, setEmail] = React.userState('');
