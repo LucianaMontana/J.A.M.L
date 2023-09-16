@@ -6,3 +6,5 @@ import { Grid } from '@mui/material';
 
 function ForgotPasswordForm() {
     const [email, setEmail] = useState('');
+
+    const handleEmailChange = (event) => {
