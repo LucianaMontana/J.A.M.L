@@ -34,5 +34,6 @@ function ForgotPasswordForm() {
             borderRadius: 2,
             px: 4,
           py: 6,
+          marginTop: 8,
 
 
