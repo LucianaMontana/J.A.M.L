@@ -5,3 +5,4 @@ import React, { useState } from 'react';
 import { Grid } from '@mui/material';
 
 function ForgotPasswordForm() {
+    const [email, setEmail] = useState('');
