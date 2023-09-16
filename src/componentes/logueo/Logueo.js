@@ -42,6 +42,14 @@ export default function Logueo() {
     })
   }
 
+  //Inicio de Sesion 
+  const iniciarSesion = (email,password) => {
+    app.auth().signInWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Sesion Iniciada con:", usuarioFirebase.user);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
+
   //Boton Submit
   const submitHandler = (e) => {
     e-preventDefaul();
