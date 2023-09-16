@@ -17,5 +17,7 @@ function ForgotPasswordForm() {
 
     return (
         <Grid
+        container
+        className='background-image'
 
 
