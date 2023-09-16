@@ -57,6 +57,14 @@ export default function SignIn() {
             name='email'
             autoComplete='email'
             autoFocus
+            sx={{
+              borderRadius: '25px', 
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+              borderColor: 'transparent',
+              },
+              },
+              }}
           />
           <TextField
             className='checkbox'
@@ -68,8 +76,16 @@ export default function SignIn() {
             type='password'
             id='password'
             autoComplete='current-password'
+            sx={{
+              borderRadius: '25px', 
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+              borderColor: 'transparent', 
+              },
+              },
+              }}
           />
-          <FormControlLabel style={{alignSelf:'center', marginLeft:'60px'}}
+          <FormControlLabel style={{alignSelf:'center', marginLeft:'50px', color:'rgb(25, 118, 210)', fontSize:'16px'}}
             control={<Checkbox value='remember' color='primary' />}
             label='𝑅𝑒𝒸𝑜𝓇𝒹𝒶𝓇 𝓂𝒾𝓈 𝒹𝒶𝓉𝑜𝓈'
           />
@@ -82,12 +98,12 @@ export default function SignIn() {
             𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
           </Button>
           <Grid container spacing={2}>
-            <Grid item xs={8} style={{marginLeft:'-90px'}}>
+            <Grid item xs={8} style={{alignSelf: 'center', marginLeft:'60px'}}>
               <Link href='/OlvidoContraseña' variant='body2'>
               𝐻𝒶𝓈 𝑜𝓁𝓋𝒾𝒹𝒶𝒹𝑜 𝓉𝓊 𝒸𝑜𝓃𝓉𝓇𝒶𝓈𝑒ñ𝒶?
               </Link>
             </Grid>
-            <Grid item xs={9} style={{marginBottom:'-60px', marginLeft:'-235px'}}>
+            <Grid item xs={9} style={{marginBottom:'-30px', alignSelf: 'center', marginLeft:'60px'}}>
               <Link href='/registro' variant='body2'>
                 {'𝒩𝑜 𝓉𝑒𝓃𝑒𝓈 𝒸𝓊𝑒𝓃𝓉𝒶? 𝑅𝑒𝑔𝒾𝓈𝓉𝓇𝒶𝓉𝑒!'}
               </Link>
