@@ -14,3 +14,7 @@ function ForgotPasswordForm() {
     const handleResetPassword = () => {
         alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
     };
+
+    return (
+
+
