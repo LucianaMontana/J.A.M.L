@@ -33,6 +33,21 @@ export default function Logueo() {
   const [email, setEmail] = React.userState('');
   const [password, setPassword] = React.userState('');
 
+  //Boton Submit
+  const submitHandler = (e) => {
+    e-preventDefaul();
+
+    //Verificar creacion de usuario
+    if (isRegistrando) {
+      crearUsuario(email,password);
+    }
+
+    //Verificar usuario ya registrado ya puede iniciar sesion
+    if (!isRegistrando) {
+      iniciarSesion(email,password);
+    }
+  }
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
