@@ -36,4 +36,5 @@ function ForgotPasswordForm() {
           py: 6,
           marginTop: 8,
           display: 'flex',
+          flexDirection: 'column',
 
