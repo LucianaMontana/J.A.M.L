@@ -39,4 +39,5 @@ function ForgotPasswordForm() {
           flexDirection: 'column',
           alignItems: 'center',
         }}
+        >
 
