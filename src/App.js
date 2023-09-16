@@ -5,9 +5,9 @@ import { app } from './componentes/firebase';
 import Logueo from './componentes/logueo/Logueo';
 import Home from './componentes/home/Home';
 
-/*import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './pages/login';
-import Registrate from './pages/altausuario';*/
+import Registrate from './pages/altausuario';
 
 
 function App() {
@@ -26,16 +26,13 @@ function App() {
 
     <div>
       {usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}
-    </div>
-
-    /*
       <Router>
         <Routes>
-          <Route path='/' element={<SignIn />} />
+          <Route path='/home' element={<SignIn />} />
           <Route path='/registro' element={<Registrate />} />
         </Routes>
-      </Router>  
-    */
+      </Router>
+    </div>  
   );
 }
 export default App;
