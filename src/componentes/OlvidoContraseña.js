@@ -27,5 +27,6 @@ function ForgotPasswordForm() {
         <Grid
            item
            container
+           xs={4}
 
 
