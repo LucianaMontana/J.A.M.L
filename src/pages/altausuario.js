@@ -72,6 +72,16 @@ export default function Registrate() {
               id='password'
               autoComplete='current-password'
             />
+            <TextField
+              margin='normal'
+              required
+              fullWidth
+              id='Telefono'
+              label='Telefono:'
+              name='Telefono'
+              autoComplete='Telefono'
+              maxlength='10'
+            />
             
           </Box>
         </Grid>
