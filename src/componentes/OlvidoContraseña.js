@@ -32,5 +32,7 @@ function ForgotPasswordForm() {
            sx={{
             boxShadow: 3,
             borderRadius: 2,
+            px: 4,
+          py: 6,
 
 
