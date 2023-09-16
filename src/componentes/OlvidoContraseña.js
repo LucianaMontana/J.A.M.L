@@ -57,4 +57,5 @@ function ForgotPasswordForm() {
              autoFocus
              value={email}
              onChange={handleEmailChange}
+             />
 
