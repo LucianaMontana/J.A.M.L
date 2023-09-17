@@ -66,6 +66,7 @@ function ForgotPasswordForm() {
              >
                  Enviar Instrucciones de Recuperación
              </Button>
+             </Grid>
 
 
 
