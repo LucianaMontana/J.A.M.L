@@ -59,6 +59,10 @@ function ForgotPasswordForm() {
              onChange={handleEmailChange}
              />
              <Button
+             variant='contained'
+             color='primary'
+             fullWidth
+             onClick={handleResetPassword}
 
 
 
