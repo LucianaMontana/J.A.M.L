@@ -10,6 +10,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { InputAdornment, IconButton } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
 
@@ -32,7 +34,15 @@ export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
   const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordErorr] = React.useState('');
+  //Ver contraseña
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  }
 
   // Creacion de Usuario Registro
   const crearUsuario = (email,password) => {
@@ -53,6 +63,25 @@ export default function Logueo(props) {
   //Boton Submit
   const submitHandler = (e) => {
     e.preventDefault();
+  
+    //Validacion de correo electronico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Ingresa un correo electronico valido.');
+      return;
+    }
+
+    //Limpiar el mensaje de error si pasa la validacion
+    setEmailError('');
+
+    //Validacion de la logitud de la contraseña
+    if (password.length < 6 || password.length > 8 ) {
+      setPasswordErorr('La contraseña debe tener entre 6 y 8 caracteres.');
+      return;
+    }
+
+    //Limpiar el mensaje de error si pasa la validacion
+    setPasswordErorr('');
 
     //Verificar creacion de usuario
     if (isRegistrando) {
@@ -95,6 +124,9 @@ export default function Logueo(props) {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              type='email'
+              error={!!emailError}
+              helperText={emailError}
             />
             <TextField
               margin="normal"
@@ -102,11 +134,26 @@ export default function Logueo(props) {
               fullWidth
               name="password"
               label="Contraseña"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               id="password"
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              error={!!passwordError}
+              helperText={passwordError}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position='end' >
+                    <IconButton
+                      aria-label='toggle password visibility'
+                      onClick={togglePasswordVisibility}
+                      edge='end'
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
             <Button
               type="submit"

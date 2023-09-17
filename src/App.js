@@ -22,16 +22,13 @@ function App() {
   } ,[])
 
   return(
-
-    <div>
-      {usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}
-      <Router>
-        <Routes>
-          <Route path='/home' element={<SignIn />} />
-          <Route path='/registro' element={<Registrate />} />
-        </Routes>
-      </Router>
-    </div>  
+    <Router>
+      <Routes>
+        <Route path='/' element={usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}/>
+        <Route path='/home' element={<SignIn />} />
+        <Route path='/registro' element={<Registrate />} />
+      </Routes>
+    </Router>  
   );
 }
 export default App;
