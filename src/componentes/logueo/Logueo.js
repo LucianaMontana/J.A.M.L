@@ -10,6 +10,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { InputAdornment, IconButton } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
 
@@ -35,6 +37,12 @@ export default function Logueo(props) {
   const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [passwordError, setPasswordErorr] = React.useState('');
+  //Ver contraseña
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  }
 
   // Creacion de Usuario Registro
   const crearUsuario = (email,password) => {
@@ -126,13 +134,26 @@ export default function Logueo(props) {
               fullWidth
               name="password"
               label="Contraseña"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               id="password"
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={!!passwordError}
               helperText={passwordError}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position='end' >
+                    <IconButton
+                      aria-label='toggle password visibility'
+                      onClick={togglePasswordVisibility}
+                      edge='end'
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
             <Button
               type="submit"
