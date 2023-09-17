@@ -63,6 +63,7 @@ function ForgotPasswordForm() {
              color='primary'
              fullWidth
              onClick={handleResetPassword}
+             >
 
 
 
