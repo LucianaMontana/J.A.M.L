@@ -34,6 +34,7 @@ export default function Logueo(props) {
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordErorr] = React.useState('');
 
   // Creacion de Usuario Registro
   const crearUsuario = (email,password) => {
@@ -64,6 +65,15 @@ export default function Logueo(props) {
 
     //Limpiar el mensaje de error si pasa la validacion
     setEmailError('');
+
+    //Validacion de la logitud de la contraseña
+    if (password.length < 6 || password.length > 8 ) {
+      setPasswordErorr('La contraseña debe tener entre 6 y 8 caracteres.');
+      return;
+    }
+
+    //Limpiar el mensaje de error si pasa la validacion
+    setPasswordErorr('');
 
     //Verificar creacion de usuario
     if (isRegistrando) {
@@ -121,6 +131,8 @@ export default function Logueo(props) {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              error={!!passwordError}
+              helperText={passwordError}
             />
             <Button
               type="submit"
