@@ -68,6 +68,7 @@ function ForgotPasswordForm() {
              </Button>
              </Grid>
              </Grid>
+              );
 
 
 
