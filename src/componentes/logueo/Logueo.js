@@ -32,6 +32,7 @@ export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
   const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   // Creacion de Usuario Registro
@@ -53,6 +54,16 @@ export default function Logueo(props) {
   //Boton Submit
   const submitHandler = (e) => {
     e.preventDefault();
+  
+    //Validacion de correo electronico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Ingresa un correo electronico valido.');
+      return;
+    }
+
+    //Limpiar el mensaje de error si pasa la validacion
+    setEmailError('');
 
     //Verificar creacion de usuario
     if (isRegistrando) {
@@ -95,6 +106,9 @@ export default function Logueo(props) {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              type='email'
+              error={!!emailError}
+              helperText={emailError}
             />
             <TextField
               margin="normal"
