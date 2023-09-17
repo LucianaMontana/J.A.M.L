@@ -70,6 +70,7 @@ function ForgotPasswordForm() {
              </Grid>
               );
             }
+            export default ForgotPasswordForm;
 
 
 
