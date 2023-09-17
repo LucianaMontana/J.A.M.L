@@ -65,6 +65,7 @@ function ForgotPasswordForm() {
              onClick={handleResetPassword}
              >
                  Enviar Instrucciones de Recuperación
+             </Button>
 
 
 
