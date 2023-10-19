@@ -1,20 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-import AltaUsuario from './altausuario';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Login from './login';
+import React, { useEffect } from 'react';
+//Credencial de Firebase
+import { app } from './componentes/firebase';
+//Components
+import Logueo from './componentes/logueo/Logueo';
+import Home from './componentes/home/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignIn from './pages/login';
+import Registrate from './pages/altausuario';
 
 
 function App() {
 
-  return (
+  const [usuario, setUsuario] = React.useState(null);
+
+  //Recarga pagina siga con la sesion iniciada
+  useEffect(() => {
+    app.auth().onAuthStateChanged((usuarioFirebase) => {
+      console.log("Ya tienen sesion iniciada con:", usuarioFirebase);
+      setUsuario(usuarioFirebase);
+    })
+  } ,[])
+
+  return(
     <Router>
       <Routes>
-        <Route path= '/AltaUsuario' element={<AltaUsuario/>}/>
-        <Route path='/login' element={<Login />}/>
+        <Route path='/' element={usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}/>
+        <Route path='/home' element={<SignIn />} />
+        <Route path='/registro' element={<Registrate />} />
       </Routes>
-    </Router>
-
+    </Router>  
   );
 }
 export default App;

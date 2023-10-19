@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://previews.123rf.com/images/chekat/chekat1708/chekat170800090/84784300-fondo-azul-y-violeta-abstracto-de-la-acuarela-concepto-de-dise%C3%B1o-mar-y-oc%C3%A9ano.jpg');
+    background-size: cover;
+  }
+  
+  .login-box {
+    box-shadow: 4;
+    border-radius: 3;
+    padding: 6 4;
+    margin-top: 8;
+    position: relative;
+    background-color: hsl(0, 0%, 13%); 
+  }
+  .checkbox {
+    background-color: rgb(129, 129, 129);
+  }
+  
