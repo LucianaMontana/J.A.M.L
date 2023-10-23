@@ -95,7 +95,8 @@ export default function Logueo(props) {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <div className="background-container">
+     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -179,5 +180,7 @@ export default function Logueo(props) {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </div>
+    
   );
 }
