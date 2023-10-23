@@ -14,6 +14,7 @@ import { InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
+import '../../styles/Logueo.css';
 
 function Copyright(props) {
   return (
