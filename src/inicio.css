@@ -1,0 +1,10 @@
+*{
+    background-image: url('Imágenes\fff.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body{
+    width: auto;
+    height: auto;
+}
