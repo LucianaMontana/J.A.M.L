@@ -7,6 +7,7 @@ import Home from './componentes/home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './pages/login';
 import Registrate from './pages/altausuario';
+import Inicio from './pages/inicio';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}/>
         <Route path='/home' element={<SignIn />} />
         <Route path='/registro' element={<Registrate />} />
+        <Route path='/inicio' element={<Inicio />} />
       </Routes>
     </Router>  
   );
