@@ -1,4 +1,5 @@
 import React from 'react';
+import './inicio.css'
 
 function Inicio(){
     return(
