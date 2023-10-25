@@ -1,5 +1,5 @@
 *{
-    background-image: url('Imágenes\fff.png');
+    background-image: url('./fff.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
