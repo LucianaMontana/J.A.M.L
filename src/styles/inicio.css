@@ -1,7 +1,9 @@
 *{
-    background-image: url('./img/fff.png');
+    background-image: url('img/fff.png');
     background-size: cover;
     background-repeat: no-repeat;
+    width: auto;
+    height: auto;
 }
 
 body{
