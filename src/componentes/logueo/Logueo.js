@@ -14,7 +14,6 @@ import { InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
-import '../../styles/Logueo.css';
 
 function Copyright(props) {
   return (
@@ -115,6 +114,18 @@ export default function Logueo(props) {
             {isRegistrando ? "Registrate" : "Iniciar Sesion"}
           </Typography>
           <Box component="form" onSubmit={submitHandler}  noValidate sx={{ mt: 1 }}>
+            {isRegistrando && (
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="username"
+                label="Nombre y Apellido"
+                name="username"
+                autoComplete="username"
+                autoFocus    
+              />
+            )}
             <TextField
               margin="normal"
               required
@@ -157,6 +168,19 @@ export default function Logueo(props) {
                 )
               }}
             />
+            {isRegistrando && (
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="recordar-password"
+                label="Recordar Contraseña"
+                type={showPassword ? 'text' : 'password'}
+                name="recordar-password"
+                autoComplete="recordar-password"
+                autoFocus    
+              />
+            )}
             <Button
               type="submit"
               fullWidth
