@@ -33,6 +33,7 @@ const defaultTheme = createTheme();
 export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
+  const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -178,7 +179,19 @@ export default function Logueo(props) {
                 type={showPassword ? 'text' : 'password'}
                 name="recordar-password"
                 autoComplete="recordar-password"
-                autoFocus    
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position='end' >
+                      <IconButton
+                        aria-label='toggle password visibility'
+                        onClick={togglePasswordVisibility}
+                        edge='end'
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
               />
             )}
             <Button
