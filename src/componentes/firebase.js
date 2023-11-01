@@ -1,6 +1,7 @@
 //Credenciales de Firebase
 import firebase from "firebase/compat/app"; 
 import "firebase/compat/auth";
+import {getAuth, GoogleAuthProvider} from "firebase/auth";
 
 export const app = firebase.initializeApp ({
   apiKey: "AIzaSyArxWO7HmmZmWvzttWhTQL3KfEluPxncVw",
@@ -11,3 +12,7 @@ export const app = firebase.initializeApp ({
   appId: "1:477385313791:web:919c0af67a03e695f96bca",
   measurementId: "G-KWSWHD2276"
 });
+
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+export {auth, provider};

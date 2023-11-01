@@ -33,7 +33,6 @@ const defaultTheme = createTheme();
 export default function Logueo(props) {
 
   const [ isRegistrando, setIsRegistrando ] = React.useState(false);
-  const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [password, setPassword] = React.useState('');
