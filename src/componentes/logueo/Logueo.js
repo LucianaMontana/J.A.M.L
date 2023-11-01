@@ -15,7 +15,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
 // Google
-import {auth, providerGoogle} from "../firebase";
+import {auth, providerGoogle, providerGithub} from "../firebase";
 import { signInWithPopup } from 'firebase/auth';
 // Home
 import Home from '../home/Home';
@@ -47,6 +47,8 @@ export default function Logueo(props) {
   const [showPassword, setShowPassword] = React.useState(false);
   // Usuario Google
   const [userGoogle, setUserGoogle] = React.useState('');
+  // Usuario Github
+  const [userGithub, setUserGithub] = React.useState('');
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -106,12 +108,24 @@ export default function Logueo(props) {
   const IniciarSesionGoogle =() => {
       signInWithPopup(auth, providerGoogle).then((dataGoogle)=>{ 
         setUserGoogle(dataGoogle.user.email);
-        localStorage.setItem("email", dataGoogle.user.email)
+        localStorage.setItem("email", dataGoogle.user.email);
       })
   }
 
   React.useEffect(() => {
     setUserGoogle(localStorage.getItem('email'));
+  })
+
+  // Boton Github
+  const IniciarSesionGithub =() => {
+      signInWithPopup(auth, providerGithub).then((dataGithub)=>{ 
+        setUserGithub(dataGithub.user.email);
+        localStorage.setItem("email", dataGithub.user.email);
+      })
+  }
+
+  React.useEffect(() => {
+    setUserGithub(localStorage.getItem('email'));
   })
 
   return (
@@ -227,7 +241,8 @@ export default function Logueo(props) {
                 <Button
                   type="submit"
                   variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
+                  fullWidth
+                  sx={{ mt: 1, mb: 1 }}
                   onClick={IniciarSesionGoogle}
                 >
                   <svg
@@ -256,6 +271,19 @@ export default function Logueo(props) {
                     ></path>
                   </svg>
                   Google
+                </Button>
+              ))
+            }
+            {userGithub ? (<Home/>) :  
+              (!isRegistrando && (
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  sx={{ mt: 1, mb: 1 }}
+                  onClick={IniciarSesionGithub}
+                >
+                  Github
                 </Button>
               ))
             }
