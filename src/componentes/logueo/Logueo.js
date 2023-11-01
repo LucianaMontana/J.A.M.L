@@ -15,7 +15,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import {app} from "../firebase";
 // Google
-import {auth, provider} from "../firebase";
+import {auth, providerGoogle} from "../firebase";
 import { signInWithPopup } from 'firebase/auth';
 // Home
 import Home from '../home/Home';
@@ -104,7 +104,7 @@ export default function Logueo(props) {
 
   // Boton Google
   const IniciarSesionGoogle =() => {
-      signInWithPopup(auth, provider).then((dataGoogle)=>{ 
+      signInWithPopup(auth, providerGoogle).then((dataGoogle)=>{ 
         setUserGoogle(dataGoogle.user.email);
         localStorage.setItem("email", dataGoogle.user.email)
       })
