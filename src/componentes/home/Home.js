@@ -6,6 +6,8 @@ export default function Home() {
 
     const cerrarSesion = () => {
         app.auth().signOut();
+        localStorage.clear();
+        window.location.reload();
     }
 
     return (
