@@ -10,64 +10,46 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// Credencial de Firebase
-import {app} from "../firebase";
+import { app } from '../firebase';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        J.A.M.L
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const defaultTheme = createTheme();
-
-export default function Logueo(props) {
-
-  const [ isRegistrando, setIsRegistrando ] = React.useState(false);
+function Logueo({ isUserLoggedIn, setIsUserLoggedIn }) {
+  const [isRegistrando, setIsRegistrando] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  // Creacion de Usuario Registro
-  const crearUsuario = (email,password) => {
-    app.auth().createUserWithEmailAndPassword(email,password).then((usuarioFirebase) => {
-      console.log("Usuario Creado:", usuarioFirebase);
-      props.setUsuario(usuarioFirebase);
-    })
-  }
+  const crearUsuario = (email, password) => {
+    app
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((usuarioFirebase) => {
+        setIsUserLoggedIn(true);
+      });
+  };
 
-  //Inicio de Sesion 
-  const iniciarSesion = (email,password) => {
-    app.auth().signInWithEmailAndPassword(email,password).then((usuarioFirebase) => {
-      console.log("Sesion Iniciada con:", usuarioFirebase.user);
-      props.setUsuario(usuarioFirebase);
-    })
-  }
+  const iniciarSesion = (email, password) => {
+    app
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((usuarioFirebase) => {
+        setIsUserLoggedIn(true);
+      });
+  };
 
-  //Boton Submit
   const submitHandler = (e) => {
     e.preventDefault();
 
-    //Verificar creacion de usuario
     if (isRegistrando) {
-      crearUsuario(email,password);
+      crearUsuario(email, password);
     }
 
-    //Verificar usuario ya registrado ya puede iniciar sesion
     if (!isRegistrando) {
-      iniciarSesion(email,password);
+      iniciarSesion(email, password);
     }
-  }
+  };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+    <ThemeProvider theme={createTheme()}>
+      <Container component='main' maxWidth='xs'>
         <CssBaseline />
         <Box
           sx={{
@@ -80,57 +62,65 @@ export default function Logueo(props) {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            {isRegistrando ? "Registrate" : "Iniciar Sesion"}
+          <Typography component='h1' variant='h5'>
+            {isRegistrando ? 'Registrate' : 'Iniciar Sesion'}
           </Typography>
-          <Box component="form" onSubmit={submitHandler}  noValidate sx={{ mt: 1 }}>
+          <Box
+            component='form'
+            onSubmit={submitHandler}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
-              margin="normal"
+              margin='normal'
               required
               fullWidth
-              id="email"
-              label="Correo"
-              name="email"
-              autoComplete="email"
+              id='email'
+              label='Correo'
+              name='email'
+              autoComplete='email'
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
-              margin="normal"
+              margin='normal'
               required
               fullWidth
-              name="password"
-              label="Contraseña"
-              type="password"
-              id="password"
-              autoComplete="current-password"
+              name='password'
+              label='Contraseña'
+              type='password'
+              id='password'
+              autoComplete='current-password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <Button
-              type="submit"
+              type='submit'
               fullWidth
-              variant="contained"
+              variant='contained'
               sx={{ mt: 3, mb: 2 }}
             >
-              {""} 
-              {isRegistrando ? "Registrate" : "Iniciar Sesion"}
+              {isRegistrando ? 'Registrate' : 'Iniciar Sesion'}
             </Button>
             <Grid container>
               <Grid item>
-                <Link onClick={() => setIsRegistrando(!isRegistrando)} variant="body2" style={{cursor: 'pointer'}}>
+                <Link
+                  onClick={() => setIsRegistrando(!isRegistrando)}
+                  variant='body2'
+                  style={{ cursor: 'pointer' }}
+                >
                   {isRegistrando
-                    ? "¿Ya tienes cuenta? Inicia Sesion"
-                    : "¿No tenes cuenta? Registrate"
-                  }
+                    ? '¿Ya tienes cuenta? Inicia Sesion'
+                    : '¿No tienes cuenta? Registrate'}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
 }
+
+export default Logueo;

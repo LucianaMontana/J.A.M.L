@@ -30,7 +30,7 @@ export default function SignIn() {
       <Grid
         item
         container
-        xs={3.50}
+        xs={3.5}
         className='login-box'
         sx={{
           boxShadow: 3,
@@ -44,7 +44,7 @@ export default function SignIn() {
         }}
       >
         <Typography component='h1' variant='h5' color='primary'>
-        𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
+          𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
         </Typography>
         <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
@@ -58,13 +58,13 @@ export default function SignIn() {
             autoComplete='email'
             autoFocus
             sx={{
-              borderRadius: '25px', 
+              borderRadius: '25px',
               '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-              borderColor: 'transparent',
+                '& fieldset': {
+                  borderColor: 'transparent',
+                },
               },
-              },
-              }}
+            }}
           />
           <TextField
             className='checkbox'
@@ -77,15 +77,21 @@ export default function SignIn() {
             id='password'
             autoComplete='current-password'
             sx={{
-              borderRadius: '25px', 
+              borderRadius: '25px',
               '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-              borderColor: 'transparent', 
+                '& fieldset': {
+                  borderColor: 'transparent',
+                },
               },
-              },
-              }}
+            }}
           />
-          <FormControlLabel style={{alignSelf:'center', marginLeft:'50px', color:'rgb(25, 118, 210)', fontSize:'16px'}}
+          <FormControlLabel
+            style={{
+              alignSelf: 'center',
+              marginLeft: '50px',
+              color: 'rgb(25, 118, 210)',
+              fontSize: '16px',
+            }}
             control={<Checkbox value='remember' color='primary' />}
             label='𝑅𝑒𝒸𝑜𝓇𝒹𝒶𝓇 𝓂𝒾𝓈 𝒹𝒶𝓉𝑜𝓈'
           />
@@ -98,12 +104,24 @@ export default function SignIn() {
             𝓘𝓷𝓲𝓬𝓲𝓪𝓻 𝓢𝓮𝓼𝓲𝓸𝓷
           </Button>
           <Grid container spacing={2}>
-            <Grid item xs={8} style={{alignSelf: 'center', marginLeft:'60px'}}>
+            <Grid
+              item
+              xs={8}
+              style={{ alignSelf: 'center', marginLeft: '60px' }}
+            >
               <Link href='/OlvidoContraseña' variant='body2'>
-              𝐻𝒶𝓈 𝑜𝓁𝓋𝒾𝒹𝒶𝒹𝑜 𝓉𝓊 𝒸𝑜𝓃𝓉𝓇𝒶𝓈𝑒ñ𝒶?
+                𝐻𝒶𝓈 𝑜𝓁𝓋𝒾𝒹𝒶𝒹𝑜 𝓉𝓊 𝒸𝑜𝓃𝓉𝓇𝒶𝓈𝑒ñ𝒶?
               </Link>
             </Grid>
-            <Grid item xs={9} style={{marginBottom:'-30px', alignSelf: 'center', marginLeft:'60px'}}>
+            <Grid
+              item
+              xs={9}
+              style={{
+                marginBottom: '-30px',
+                alignSelf: 'center',
+                marginLeft: '60px',
+              }}
+            >
               <Link href='/registro' variant='body2'>
                 {'𝒩𝑜 𝓉𝑒𝓃𝑒𝓈 𝒸𝓊𝑒𝓃𝓉𝒶? 𝑅𝑒𝑔𝒾𝓈𝓉𝓇𝒶𝓉𝑒!'}
               </Link>
