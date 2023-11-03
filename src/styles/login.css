@@ -3,10 +3,6 @@
 }
 
 .background-image {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgb(14, 14, 73);
 }
 
@@ -20,4 +16,7 @@
 }
 .checkbox {
   background-color: rgb(129, 129, 129);
+}
+.blancusco {
+  background-color: white;
 }
