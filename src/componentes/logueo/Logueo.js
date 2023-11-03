@@ -146,10 +146,11 @@ export default function Logueo(props) {
         className='login-box'
         sx={{
           boxShadow: 3,
-          borderRadius: 2,
+          borderRadius: 4,
           px: 4,
           py: 6,
-          marginTop: 8,
+          marginTop: 5,
+          marginbottom: 15,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -161,7 +162,6 @@ export default function Logueo(props) {
               <CssBaseline />
               <Box
                 sx={{
-                  marginTop: 8,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -205,6 +205,15 @@ export default function Logueo(props) {
                     type='email'
                     error={!!emailError}
                     helperText={emailError}
+                    className='checkbox'
+                    sx={{
+                      borderRadius: '25px',
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: 'transparent',
+                        },
+                      },
+                    }}
                   />
                   <TextField
                     margin='normal'
@@ -231,6 +240,15 @@ export default function Logueo(props) {
                           </IconButton>
                         </InputAdornment>
                       ),
+                    }}
+                    className='checkbox'
+                    sx={{
+                      borderRadius: '25px',
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: 'transparent',
+                        },
+                      },
                     }}
                   />
                   {isRegistrando && (
