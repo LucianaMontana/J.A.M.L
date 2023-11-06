@@ -316,6 +316,9 @@ export default function Logueo(props) {
           </Box>
         </Container>
       </ThemeProvider>
+      <Box sx={{ mt: 5 }}>
+        <Copyright />
+      </Box>
     </div>
   );
 }
