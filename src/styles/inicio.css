@@ -1,27 +1,36 @@
-*¨{
+*{
     /*background-image: url('../img/fondo.inicio.png');*/
     background-size: cover;
     background-repeat: no-repeat;
     width: auto;
     height: auto;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-position: center;/* Centra la imagen */
 }
 
 body{
     width: auto;
     height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 h1{
     text-align: center;
     font-size: 50px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .spinner{
 border: 4px solid rgba(0, 0, 0, 0.1);
 width: 36px;
 height: 36px;
-border-radius: 50%;
+margin-left: 48%;/*mueve spinner hacia la izquierda*/
+margin-top: 80%;
+border-radius: 60%;
 border-left-color: #09f;
-
 
 animation: spin 1s ease infinite;
 }
