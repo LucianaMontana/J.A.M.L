@@ -173,7 +173,7 @@ export default function Logueo(props) {
                   alignItems: 'center',
                 }}
               >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
                   <LockOutlinedIcon />
                 </Avatar>
                 <Typography
@@ -181,7 +181,7 @@ export default function Logueo(props) {
                   variant='h5'
                   sx={{
                     fontFamily: 'times new roman',
-                    backgroundcolor: 'white',
+                    color: 'white',
                   }}
                 >
                   {isRegistrando ? 'Registrate' : 'Iniciar sesión'}
