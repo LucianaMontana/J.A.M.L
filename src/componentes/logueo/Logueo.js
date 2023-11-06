@@ -14,7 +14,7 @@ import { InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 // Credencial de Firebase
 import { app } from '../firebase';
-// Google
+// Google y Git
 import { auth, providerGoogle, providerGithub } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
 // Home
@@ -41,7 +41,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Logueo(props) {
-  const [isRegistrando, setIsRegistrando] = React.useState(false);
+  const [ isRegistrando, setIsRegistrando ] = React.useState(false);
   // Usuario Anonimo
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
@@ -56,29 +56,28 @@ export default function Logueo(props) {
   const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
+  }
 
-  const crearUsuario = (email, password) => {
-    app
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((usuarioFirebase) => {
-        setIsUserLoggedIn(true);
-      });
-  };
+  // Creacion de Usuario Registro
+  const crearUsuario = (email,password) => {
+    app.auth().createUserWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Usuario Creado:", usuarioFirebase);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
 
-  const iniciarSesion = (email, password) => {
-    app
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((usuarioFirebase) => {
-        setIsUserLoggedIn(true);
-      });
-  };
+  //Inicio de Sesion 
+  const iniciarSesion = (email,password) => {
+    app.auth().signInWithEmailAndPassword(email,password).then((usuarioFirebase) => {
+      console.log("Sesion Iniciada con:", usuarioFirebase.user);
+      props.setUsuario(usuarioFirebase);
+    })
+  }
 
+  //Boton Submit
   const submitHandler = (e) => {
     e.preventDefault();
-
+  
     //Validacion de correo electronico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -90,7 +89,7 @@ export default function Logueo(props) {
     setEmailError('');
 
     //Validacion de la logitud de la contraseña
-    if (password.length < 6 || password.length > 8) {
+    if (password.length < 6 || password.length > 8 ) {
       setPasswordErorr('La contraseña debe tener entre 6 y 8 caracteres.');
       return;
     }
@@ -98,38 +97,40 @@ export default function Logueo(props) {
     //Limpiar el mensaje de error si pasa la validacion
     setPasswordErorr('');
 
+    //Verificar creacion de usuario
     if (isRegistrando) {
-      crearUsuario(email, password);
+      crearUsuario(email,password);
     }
 
+    //Verificar usuario ya registrado ya puede iniciar sesion
     if (!isRegistrando) {
-      iniciarSesion(email, password);
+      iniciarSesion(email,password);
     }
-  };
+  }
 
   // Boton Google
-  const IniciarSesionGoogle = () => {
-    signInWithPopup(auth, providerGoogle).then((dataGoogle) => {
-      setUserGoogle(dataGoogle.user.email);
-      localStorage.setItem('email', dataGoogle.user.email);
-    });
-  };
+  const IniciarSesionGoogle =() => {
+      signInWithPopup(auth, providerGoogle).then((dataGoogle)=>{ 
+        setUserGoogle(dataGoogle.user.email);
+        localStorage.setItem("email", dataGoogle.user.email);
+      })
+  }
 
   React.useEffect(() => {
     setUserGoogle(localStorage.getItem('email'));
-  });
+  })
 
   // Boton Github
-  const IniciarSesionGithub = () => {
-    signInWithPopup(auth, providerGithub).then((dataGithub) => {
-      setUserGithub(dataGithub.user.email);
-      localStorage.setItem('email', dataGithub.user.email);
-    });
-  };
+  const IniciarSesionGithub =() => {
+      signInWithPopup(auth, providerGithub).then((dataGithub)=>{ 
+        setUserGithub(dataGithub.user.email);
+        localStorage.setItem("email", dataGithub.user.email);
+      })
+  }
 
   React.useEffect(() => {
     setUserGithub(localStorage.getItem('email'));
-  });
+  })
 
   return (
     <Grid
@@ -431,5 +432,28 @@ export default function Logueo(props) {
         </div>
       </Grid>
     </Grid>
+                )
+              )}
+              <Grid container>
+                <Grid item>
+                  <Link
+                    onClick={() => setIsRegistrando(!isRegistrando)}
+                    variant='body2'
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {isRegistrando
+                      ? '¿Ya tienes cuenta? Inicia Sesion'
+                      : '¿No tienes cuenta? Registrate'}
+                  </Link>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </ThemeProvider>
+      <Box sx={{ mt: 5 }}>
+        <Copyright />
+      </Box>
+    </div>
   );
 }
