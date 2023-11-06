@@ -8,10 +8,11 @@ function Inicio(){
              <div>
                 <h1>Living Slate</h1>
             </div>              
-
+            <div class="spinner"></div>
         </>  
     );
 }
+
 /*                
  <div class="spinner-overlay">  
         <div class="spinner"></div>
