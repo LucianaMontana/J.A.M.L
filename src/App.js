@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from './pages/login';
 import Registrate from './pages/altausuario';
 import Inicio from './pages/inicio';
-import Algoraro from './componentes/logueo/algoraro';
+import PasswordInput from './pages/OlvidoContraseña';
 
 function App() {
   const [usuario, setUsuario] = React.useState(null);
@@ -28,7 +28,7 @@ function App() {
         <Route path='/home' element={<SignIn />} />
         <Route path='/registro' element={<Registrate />} />
         <Route path='/inicio' element={<Inicio />} />
-        <Route path='/algo' element={<Algoraro />} />
+        <Route path='/olvido' element={<PasswordInput />} />
       </Routes>
     </Router>
   );
