@@ -298,6 +298,7 @@ export default function Logueo(props) {
                 <Grid item sm={6} sx={{ marginRight: '2%' }}></Grid>
                 <TextField
                  margin='normal'
+                 required
 
                 <FormControlLabel
                   style={{
