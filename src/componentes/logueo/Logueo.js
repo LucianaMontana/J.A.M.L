@@ -307,6 +307,7 @@ export default function Logueo(props) {
                  value={phoneNumber}
                  onChange={handlePhoneNumberChange}
                  inputProps={{
+                  maxLength: 10,
                 <FormControlLabel
                   style={{
                     alignSelf: 'center',
