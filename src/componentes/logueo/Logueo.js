@@ -294,8 +294,7 @@ export default function Logueo(props) {
                     }}
                   />
                 )}
-                <Grid item container xs={16} sx={{ display: 'flex' }}></Grid>
-                <Grid item sm={6} sx={{ marginRight: '2%' }}></Grid>
+                <Grid item container xs={16} sx={{ display: 'flex' }}><                <Grid item sm={6} sx={{ marginRight: '2%' }}></Grid>
                 <TextField
                   margin='normal'
                   required
@@ -310,6 +309,7 @@ export default function Logueo(props) {
                     maxLength: 10,
                   }}
                 />
+                 </Grid>
                 <FormControlLabel
                   style={{
                     alignSelf: 'center',
