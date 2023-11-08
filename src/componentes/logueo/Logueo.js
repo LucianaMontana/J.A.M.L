@@ -304,6 +304,7 @@ export default function Logueo(props) {
                  label='N° de Teléfono'
                  type='text' // Usa 'text' en lugar de 'numero' para evitar el escalado automático de algunos navegadores
                  id='numero'
+                 value={phoneNumber}
                 <FormControlLabel
                   style={{
                     alignSelf: 'center',
