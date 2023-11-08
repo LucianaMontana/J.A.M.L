@@ -299,6 +299,7 @@ export default function Logueo(props) {
                 <TextField
                  margin='normal'
                  required
+                 fullWidth
 
                 <FormControlLabel
                   style={{
