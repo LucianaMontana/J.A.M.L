@@ -301,6 +301,7 @@ export default function Logueo(props) {
                  required
                  fullWidth
                  name='numero'
+                 label='N° de Teléfono'
                 <FormControlLabel
                   style={{
                     alignSelf: 'center',
