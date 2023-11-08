@@ -297,18 +297,19 @@ export default function Logueo(props) {
                 <Grid item container xs={16} sx={{ display: 'flex' }}></Grid>
                 <Grid item sm={6} sx={{ marginRight: '2%' }}></Grid>
                 <TextField
-                 margin='normal'
-                 required
-                 fullWidth
-                 name='numero'
-                 label='N° de Teléfono'
-                 type='text' // Usa 'text' en lugar de 'numero' para evitar el escalado automático de algunos navegadores
-                 id='numero'
-                 value={phoneNumber}
-                 onChange={handlePhoneNumberChange}
-                 inputProps={{
-                  maxLength: 10,
-                }}
+                  margin='normal'
+                  required
+                  fullWidth
+                  name='numero'
+                  label='N° de Teléfono'
+                  type='text' // Usa 'text' en lugar de 'numero' para evitar el escalado automático de algunos navegadores
+                  id='numero'
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                  inputProps={{
+                    maxLength: 10,
+                  }}
+                />
                 <FormControlLabel
                   style={{
                     alignSelf: 'center',
