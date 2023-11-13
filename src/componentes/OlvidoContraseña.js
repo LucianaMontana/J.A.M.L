@@ -43,6 +43,18 @@ function OlvidoContraseña() {
           Ingresa tu correo electrónico para recibir instrucciones de
           recuperación:
         </p>
+        <TextField
+          margin='normal'
+          required
+          fullWidth
+          id='email'
+          label='Correo Electrónico'
+          name='email'
+          autoComplete='email'
+          autoFocus
+          value={email}
+          onChange={handleEmailChange}
+        />
       </Grid>
     </Grid>
   );
