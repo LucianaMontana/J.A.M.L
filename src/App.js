@@ -42,9 +42,20 @@ function App() {
           path='/home'
           element={<RutaPrivada element={<Home />} usuario={usuario} />}
         />
-        <Route path='/registro' element={<Registrate />} />
-        <Route path='/inicio' element={<Inicio />} />
-        <Route path='/olvido' element={<PasswordInput />} />
+        <Route
+          path='/registro'
+          element={<RutaPrivada element={<Registrate />} usuario={usuario} />}
+        />
+        <Route
+          path='/inicio'
+          element={<RutaPrivada element={<Inicio />} usuario={usuario} />}
+        />
+        <Route
+          path='/olvido'
+          element={
+            <RutaPublica element={<PasswordInput />} usuario={usuario} />
+          }
+        />
       </Routes>
     </Router>
   );
