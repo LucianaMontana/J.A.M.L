@@ -347,8 +347,8 @@ export default function Logueo(props) {
                           x='0px'
                           y='0px'
                           width='25'
-                          height='6'
-                          viewBox='0 0 50 50'
+                          height='25'
+                          viewBox='0 0 48 48'
                           sx={{ paddingleft: '140px' }}
                         >
                           <path
@@ -401,7 +401,7 @@ export default function Logueo(props) {
                           x='0px'
                           y='0px'
                           width='25'
-                          height='6'
+                          height='25'
                           viewBox='0 0 48 48'
                         >
                           <path
@@ -418,12 +418,25 @@ export default function Logueo(props) {
                       <Link
                         onClick={() => setIsRegistrando(!isRegistrando)}
                         variant='body2'
-                        style={{ cursor: 'pointer' }}
+                        style={{
+                          cursor: 'pointer',
+                          alignSelf: 'center',
+                          marginLeft: '40px',
+                        }}
                       >
                         {isRegistrando
                           ? '¿Ya tienes cuenta? Inicia Sesion'
                           : '¿No tienes cuenta? Registrate!!'}
                       </Link>
+                      <Grid
+                        item
+                        xs={16}
+                        style={{ alignSelf: 'center', marginLeft: '45px' }}
+                      >
+                        <Link href='/olvido' variant='body2'>
+                          ¿Has olvidado tu contraseña?
+                        </Link>
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Box>

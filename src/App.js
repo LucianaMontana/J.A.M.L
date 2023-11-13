@@ -11,7 +11,8 @@ import {
 import SignIn from './pages/login';
 import Registrate from './pages/altausuario';
 import Inicio from './pages/inicio';
-import PasswordInput from './pages/OlvidoContraseña';
+import ForgotPasswordForm from './componentes/OlvidoContraseña';
+import OlvidoContraseña from './componentes/OlvidoContraseña';
 
 const RutaPrivada = ({ element, usuario }) => {
   return usuario ? element : <Navigate to='/' />;
@@ -53,12 +54,12 @@ function App() {
         />
         <Route
           path='/inicio'
-          element={<RutaPrivada element={<Inicio />} usuario={usuario} />}
+          element={<RutaPublica element={<Inicio />} usuario={usuario} />}
         />
         <Route
           path='/olvido'
           element={
-            <RutaPublica element={<PasswordInput />} usuario={usuario} />
+            <RutaPublica element={<OlvidoContraseña />} usuario={usuario} />
           }
         />
       </Routes>
