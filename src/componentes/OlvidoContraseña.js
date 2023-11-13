@@ -14,6 +14,10 @@ function OlvidoContraseña() {
   const handleResetPassword = () => {
     alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
   };
-  return <div></div>;
+  return (
+    <Grid>
+      <h2>¿Has olvidado tu contraseña?</h2>
+    </Grid>
+  );
 }
 export default OlvidoContraseña;
