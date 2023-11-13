@@ -12,6 +12,10 @@ const RutaPrivada = ({ element, usuario }) => {
   return usuario ? element : <Navigate to='/' />;
 };
 
+const RutaPublica = ({ element, usuario }) => {
+  return usuario ? <Navigate to='/home' /> : element;
+};
+
 function App() {
   const [usuario, setUsuario] = React.useState(null);
 
