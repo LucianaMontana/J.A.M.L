@@ -7,6 +7,10 @@ import { Grid } from '@mui/material';
 function OlvidoContraseña() {
   const [email, setEmail] = useState('');
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
   return <div></div>;
 }
 export default OlvidoContraseña;
