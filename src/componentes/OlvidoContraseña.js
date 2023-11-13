@@ -15,7 +15,13 @@ function OlvidoContraseña() {
     alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
   };
   return (
-    <Grid container className='background-image' component='main'>
+    <Grid
+      container
+      className='background-image'
+      component='main'
+      justifyContent='center'
+      alignItems='center'
+    >
       <Grid>
         <h2>¿Has olvidado tu contraseña?</h2>
         <p>
