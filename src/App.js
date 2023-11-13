@@ -38,7 +38,10 @@ function App() {
             />
           }
         />
-        <Route path='/home' element={<SignIn />} />
+        <Route
+          path='/home'
+          element={<RutaPrivada element={<Home />} usuario={usuario} />}
+        />
         <Route path='/registro' element={<Registrate />} />
         <Route path='/inicio' element={<Inicio />} />
         <Route path='/olvido' element={<PasswordInput />} />
