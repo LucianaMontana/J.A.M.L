@@ -15,12 +15,14 @@ function OlvidoContraseña() {
     alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
   };
   return (
-    <Grid>
-      <h2>¿Has olvidado tu contraseña?</h2>
-      <p>
-        Ingresa tu correo electrónico para recibir instrucciones de
-        recuperación:
-      </p>
+    <Grid container className='background-image'>
+      <Grid>
+        <h2>¿Has olvidado tu contraseña?</h2>
+        <p>
+          Ingresa tu correo electrónico para recibir instrucciones de
+          recuperación:
+        </p>
+      </Grid>
     </Grid>
   );
 }
