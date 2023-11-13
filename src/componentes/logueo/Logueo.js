@@ -204,6 +204,7 @@ export default function Logueo(props) {
                       name='username'
                       autoComplete='username'
                       autoFocus
+                      className='checkbox'
                     />
                   )}
                   <TextField
