@@ -66,6 +66,12 @@ function OlvidoContraseña() {
             borderColor: 'transparent',
           }}
         />
+        <Button
+          variant='contained'
+          color='primary'
+          fullWidth
+          onClick={handleResetPassword}
+        ></Button>
       </Grid>
     </Grid>
   );
