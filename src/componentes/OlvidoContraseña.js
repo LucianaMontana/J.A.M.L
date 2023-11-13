@@ -71,7 +71,9 @@ function OlvidoContraseña() {
           color='primary'
           fullWidth
           onClick={handleResetPassword}
-        ></Button>
+        >
+          Enviar Instrucciones de Recuperación
+        </Button>
       </Grid>
     </Grid>
   );
