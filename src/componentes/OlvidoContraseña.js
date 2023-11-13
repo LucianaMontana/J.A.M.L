@@ -11,6 +11,9 @@ function OlvidoContraseña() {
     setEmail(event.target.value);
   };
 
+  const handleResetPassword = () => {
+    alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
+  };
   return <div></div>;
 }
 export default OlvidoContraseña;
