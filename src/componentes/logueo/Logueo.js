@@ -205,6 +205,9 @@ export default function Logueo(props) {
                       autoComplete='username'
                       autoFocus
                       className='checkbox'
+                      sx={{
+                        borderRadius: '25px',
+                      }}
                     />
                   )}
                   <TextField
