@@ -8,6 +8,10 @@ import Registrate from './pages/altausuario';
 import Inicio from './pages/inicio';
 import PasswordInput from './pages/OlvidoContraseña';
 
+const RutaPrivada = ({ element, usuario }) => {
+  return usuario ? element : <Navigate to='/' />;
+};
+
 function App() {
   const [usuario, setUsuario] = React.useState(null);
 
