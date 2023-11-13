@@ -207,7 +207,9 @@ export default function Logueo(props) {
                       className='checkbox'
                       sx={{
                         borderRadius: '25px',
-                        '& .MuiOutlinedInput-root': {},
+                        '& .MuiOutlinedInput-root': {
+                          '& fieldset': {},
+                        },
                       }}
                     />
                   )}
