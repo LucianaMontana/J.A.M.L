@@ -208,7 +208,9 @@ export default function Logueo(props) {
                       sx={{
                         borderRadius: '25px',
                         '& .MuiOutlinedInput-root': {
-                          '& fieldset': {},
+                          '& fieldset': {
+                            borderColor: 'transparent',
+                          },
                         },
                       }}
                     />
