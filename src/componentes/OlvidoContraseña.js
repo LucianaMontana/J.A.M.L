@@ -17,6 +17,10 @@ function OlvidoContraseña() {
   return (
     <Grid>
       <h2>¿Has olvidado tu contraseña?</h2>
+      <p>
+        Ingresa tu correo electrónico para recibir instrucciones de
+        recuperación:
+      </p>
     </Grid>
   );
 }
