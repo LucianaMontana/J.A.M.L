@@ -22,7 +22,7 @@ function OlvidoContraseña() {
       justifyContent='center'
       alignItems='center'
     >
-      <Grid>
+      <Grid item container xs={4} className='login-box'>
         <h2>¿Has olvidado tu contraseña?</h2>
         <p>
           Ingresa tu correo electrónico para recibir instrucciones de
