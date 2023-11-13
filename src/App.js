@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import { app } from './componentes/firebase';
 import Logueo from './componentes/logueo/Logueo';
 import Home from './componentes/home/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import SignIn from './pages/login';
 import Registrate from './pages/altausuario';
 import Inicio from './pages/inicio';
