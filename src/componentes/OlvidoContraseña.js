@@ -54,6 +54,17 @@ function OlvidoContraseña() {
           autoFocus
           value={email}
           onChange={handleEmailChange}
+          className='checkbox'
+          sx={{
+            borderRadius: '25px',
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: 'transparent',
+              },
+            },
+            fontFamily: 'times new roman',
+            borderColor: 'transparent',
+          }}
         />
       </Grid>
     </Grid>
