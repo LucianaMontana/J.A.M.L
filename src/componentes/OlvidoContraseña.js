@@ -12,7 +12,7 @@ function OlvidoContraseña() {
   };
 
   const handleResetPassword = () => {
-    alert(`Se ha enviado un correo de recuperación a tu Gmail${email}`);
+    alert(`Se ha enviado un correo de recuperación a tu Gmail: ${email}`);
   };
   return (
     <Grid
@@ -71,6 +71,7 @@ function OlvidoContraseña() {
           color='primary'
           fullWidth
           onClick={handleResetPassword}
+          sx={{ borderRadius: '25px', textTransform: 'none' }}
         >
           Enviar Instrucciones de Recuperación
         </Button>
