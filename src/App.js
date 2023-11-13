@@ -31,7 +31,12 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}
+          element={
+            <RutaPublica
+              element={<Logueo setUsuario={setUsuario} />}
+              usuario={usuario}
+            />
+          }
         />
         <Route path='/home' element={<SignIn />} />
         <Route path='/registro' element={<Registrate />} />
