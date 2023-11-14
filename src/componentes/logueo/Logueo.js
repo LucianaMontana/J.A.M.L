@@ -290,6 +290,7 @@ export default function Logueo(props) {
                       type={showPassword ? 'text' : 'password'}
                       name='recordar-password'
                       autoComplete='recordar-password'
+                      className='checkbox'
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position='end'>
