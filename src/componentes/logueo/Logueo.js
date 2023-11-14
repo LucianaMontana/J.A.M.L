@@ -213,6 +213,7 @@ export default function Logueo(props) {
                           },
                         },
                         fontFamily: 'times new roman',
+                        borderColor: 'transparent',
                       }}
                     />
                   )}
