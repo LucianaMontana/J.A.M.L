@@ -291,6 +291,16 @@ export default function Logueo(props) {
                       name='recordar-password'
                       autoComplete='recordar-password'
                       className='checkbox'
+                      sx={{
+                        borderRadius: '25px',
+                        '& .MuiOutlinedInput-root': {
+                          '& fieldset': {
+                            borderColor: 'transparent',
+                          },
+                        },
+                        fontFamily: 'times new roman',
+                        borderColor: 'transparent',
+                      }}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position='end'>
