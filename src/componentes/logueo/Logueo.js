@@ -442,9 +442,7 @@ export default function Logueo(props) {
                           marginLeft: '40px',
                         }}
                       >
-                        {isRegistrando
-                          ? '¿Ya tienes cuenta? Inicia Sesion'
-                          : '¿No tienes cuenta? Registrate!!'}
+                        {isRegistrando ? '¿Ya tienes cuenta? Inicia Sesion' : '¿No tienes cuenta? Registrate!!'}
                       </Link>
                       <Grid
                         item
