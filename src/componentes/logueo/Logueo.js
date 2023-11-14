@@ -212,6 +212,7 @@ export default function Logueo(props) {
                             borderColor: 'transparent',
                           },
                         },
+                        fontFamily: 'times new roman',
                       }}
                     />
                   )}
