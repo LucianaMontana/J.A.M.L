@@ -230,6 +230,7 @@ export default function Logueo(props) {
                       },
                       fontFamily: 'times new roman',
                       borderColor: 'transparent',
+                      color: 'black',
                     }}
                   />
                   <TextField
@@ -267,6 +268,8 @@ export default function Logueo(props) {
                         },
                       },
                       fontFamily: 'times new roman',
+                      borderColor: 'transparent',
+                      color: 'black',
                     }}
                   />
                   {isRegistrando && (
