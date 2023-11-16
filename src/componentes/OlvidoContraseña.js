@@ -38,8 +38,8 @@ function OlvidoContraseña() {
           alignItems: 'center',
         }}
       >
-        <h2>¿Has olvidado tu contraseña?</h2>
-        <p>
+        <h2 className='blancusco1'>¿Has olvidado tu contraseña?</h2>
+        <p className='blancusco1'>
           Ingresa tu correo electrónico para recibir instrucciones de
           recuperación:
         </p>

@@ -204,17 +204,6 @@ export default function Logueo(props) {
                       name='username'
                       autoComplete='username'
                       autoFocus
-                      className='checkbox'
-                      sx={{
-                        borderRadius: '25px',
-                        '& .MuiOutlinedInput-root': {
-                          '& fieldset': {
-                            borderColor: 'transparent',
-                          },
-                        },
-                        fontFamily: 'times new roman',
-                        borderColor: 'transparent',
-                      }}
                     />
                   )}
                   <TextField
@@ -293,17 +282,6 @@ export default function Logueo(props) {
                       type={showPassword ? 'text' : 'password'}
                       name='recordar-password'
                       autoComplete='recordar-password'
-                      className='checkbox'
-                      sx={{
-                        borderRadius: '25px',
-                        '& .MuiOutlinedInput-root': {
-                          '& fieldset': {
-                            borderColor: 'transparent',
-                          },
-                        },
-                        fontFamily: 'times new roman',
-                        borderColor: 'transparent',
-                      }}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position='end'>
@@ -445,7 +423,9 @@ export default function Logueo(props) {
                           marginLeft: '40px',
                         }}
                       >
-                        {isRegistrando ? '¿Ya tienes cuenta? Inicia Sesion' : '¿No tienes cuenta? Registrate!!'}
+                        {isRegistrando
+                          ? '¿Ya tienes cuenta? Inicia Sesion'
+                          : '¿No tienes cuenta? Registrate!!'}
                       </Link>
                       <Grid
                         item
